@@ -1,0 +1,61 @@
+---
+import '@fontsource/jetbrains-mono';
+import '@fontsource/inter';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Portafolio profesional mostrando mi trabajo y experiencia en desarrollo web"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <link rel="canonical" href={Astro.url} />
+  </head>
+  <body class="bg-dark text-white font-sans">
+    <slot />
+    <script>
+      import AOS from 'aos';
+      import 'aos/dist/aos.css';
+      
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --grid-size: 40px;
+  }
+
+  .grid-background {
+    background-image: linear-gradient(var(--dark-800) 1px, transparent 1px),
+      linear-gradient(90deg, var(--dark-800) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+  }
+
+  ::selection {
+    background-color: theme('colors.primary');
+    color: white;
+  }
+</style>

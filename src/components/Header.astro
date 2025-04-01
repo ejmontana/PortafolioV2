@@ -1,0 +1,27 @@
+---
+const navItems = [
+  { name: 'Sobre Mí', href: '#about' },
+  { name: 'Proyectos', href: '#projects' },
+  { name: 'Contacto', href: '#contact' },
+];
+---
+
+<header class="fixed w-full top-0 z-50 bg-dark/80 backdrop-blur-sm border-b border-dark-800">
+  <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-mono font-bold text-primary">
+      Portafolio
+    </a>
+    <ul class="hidden md:flex items-center gap-8">
+      {navItems.map(item => (
+        <li>
+          <a 
+            href={item.href}
+            class="text-gray-300 hover:text-white transition-colors"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
