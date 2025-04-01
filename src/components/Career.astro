@@ -2,47 +2,66 @@
 const education = [
   {
     title: "Ingeniería en Informática",
-    institution: "Universidad Ejemplo",
-    period: "2018 - 2022",
-    description: "Especialización en desarrollo de software y sistemas distribuidos."
+    institution: "Universidad Alejandro de Humboldt",
+    period: "Caracas, Venezuela (En Curso)",
+    description: "Formación en desarrollo de software y sistemas distribuidos.",
   },
   {
-    title: "Certificación en Desarrollo Web Full Stack",
-    institution: "Academia Tech",
-    period: "2021",
-    description: "Formación intensiva en tecnologías web modernas."
+    title: "T.S.U en Informática",
+    institution: "Instituto Universitario de Tecnología (IUTA)",
+    period: "Caracas, Venezuela",
+    description: "Especialización en tecnologías de la información y sistemas.",
   },
   {
-    title: "Máster en Desarrollo de Aplicaciones Web",
-    institution: "Instituto Tech Avanzado",
-    period: "2022 - 2023",
-    description: "Especialización en arquitecturas web modernas y mejores prácticas."
-  }
+    title: "INCES en Administración",
+    institution: "Instituto Adiestra",
+    period: "Caracas, Venezuela",
+    description: "Formación en administración y gestión empresarial.",
+  },
 ];
 
 const experience = [
   {
-    position: "Desarrollador Web Senior",
-    company: "Tech Solutions Inc.",
-    period: "2021 - Presente",
-    description: "Desarrollo de aplicaciones web escalables utilizando React, Node.js y AWS.",
+    position: "Desarrollador Full Stack",
+    company: "Equipo Gerencial Con Solidez GCS. C.A",
+    period: "Ago. 2022 - Actualidad",
+    description:
+      "Migración integral del sistema de cobranza de la empresa de jQuery a ReactJS, mejorando el rendimiento y ampliando la funcionalidad.",
     achievements: [
-      "Lideré un equipo de 5 desarrolladores",
-      "Reduje el tiempo de carga de la aplicación en un 40%",
-      "Implementé CI/CD con GitHub Actions"
-    ]
+      "Migré el sistema de cobranza de jQuery a ReactJS.",
+      "Desarrollé módulos innovadores y notificaciones en tiempo real con Socket.io.",
+      "Creé nuevos endpoints en .NET para mejorar la comunicación.",
+      "Lideré la creación de una aplicación móvil con React Native y Express.js.",
+      "Optimicé el sistema SQL Server mediante procedimientos almacenados (SP).",
+    ],
   },
   {
-    position: "Desarrollador Frontend",
-    company: "Digital Agency",
-    period: "2019 - 2021",
-    description: "Desarrollo de interfaces de usuario responsivas y accesibles.",
+    position: "Desarrollador Web",
+    company: "KPMG",
+    period: "Mar. 2021 - Jun. 2022",
+    description:
+      "Diseño y desarrollo de aplicaciones web mediante ASP.NET Blazor, incluyendo la migración de proyectos desde modelos MVC y Core MVC.",
     achievements: [
-      "Desarrollé más de 20 sitios web para clientes",
-      "Implementé sistemas de diseño reutilizables",
-      "Mejoré la accesibilidad de todos los proyectos"
-    ]
-  }
+      "Encabecé el diseño y desarrollo de aplicaciones web con ASP.NET Blazor.",
+      "Migré proyectos desde modelos MVC y Core MVC.",
+      "Implementé servicios como Claims Transformations y Active Directory.",
+      "Gestioné bases de datos relacionales con SQL Management Studio.",
+      "Configuré servidores web de Microsoft y brindé soporte a clientes a través del Service Desk.",
+    ],
+  },
+  {
+    position: "Desarrollador de Software",
+    company: "PlanSuarez C.A",
+    period: "Feb. 2018 - Mar. 2021",
+    description:
+      "Programación y desarrollo de aplicaciones empresariales utilizando JavaScript, SQL Server y .NET para optimizar operaciones internas.",
+    achievements: [
+      "Dominé el lenguaje Omnis para programar sistemas de punto de venta (POS).",
+      "Lideré la integración de puntos de venta en la plataforma POS, mejorando la gestión de transacciones.",
+      "Participé en la migración de SQL Server 2008 a 2019, incluyendo la transferencia de paquetes DTS y SP.",
+      "Diseñé sistemas web que revolucionaron la generación de informes en la empresa.",
+    ],
+  },
 ];
 ---
 
@@ -55,42 +74,56 @@ const experience = [
     <div class="grid lg:grid-cols-2 gap-16">
       <!-- Experiencia -->
       <div>
-        <h3 class="text-3xl font-bold mb-8 text-primary" data-aos="fade-up">Experiencia</h3>
+        <h3 class="text-3xl font-bold mb-8 text-primary" data-aos="fade-up">
+          Experiencia
+        </h3>
         <div class="space-y-8">
-          {experience.map((job, index) => (
-            <div 
-              class="bg-dark-700 p-8 rounded-lg hover:bg-dark-700/70 transition-colors border-l-4 border-primary"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <h4 class="text-2xl font-bold text-white mb-3">{job.position}</h4>
-              <p class="text-gray-400 text-lg mb-4">{job.company} | {job.period}</p>
-              <p class="text-gray-300 text-lg mb-6">{job.description}</p>
-              <ul class="list-disc list-inside text-gray-300 space-y-3">
-                {job.achievements.map(achievement => (
-                  <li class="text-lg">{achievement}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {
+            experience.map((job, index) => (
+              <div
+                class="bg-dark-700 p-8 rounded-lg hover:bg-dark-700/70 transition-colors border-l-4 border-primary"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <h4 class="text-2xl font-bold text-white mb-3">
+                  {job.position}
+                </h4>
+                <p class="text-gray-400 text-lg mb-4">
+                  {job.company} | {job.period}
+                </p>
+                <p class="text-gray-300 text-lg mb-6">{job.description}</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-3">
+                  {job.achievements.map((achievement) => (
+                    <li class="text-lg">{achievement}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
         </div>
       </div>
 
       <!-- Educación -->
       <div>
-        <h3 class="text-3xl font-bold mb-8 text-primary" data-aos="fade-up">Educación</h3>
+        <h3 class="text-3xl font-bold mb-8 text-primary" data-aos="fade-up">
+          Educación
+        </h3>
         <div class="space-y-8">
-          {education.map((item, index) => (
-            <div 
-              class="bg-dark-700 p-8 rounded-lg hover:bg-dark-700/70 transition-colors border-l-4 border-secondary"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <h4 class="text-2xl font-bold text-white mb-3">{item.title}</h4>
-              <p class="text-gray-400 text-lg mb-4">{item.institution} | {item.period}</p>
-              <p class="text-gray-300 text-lg">{item.description}</p>
-            </div>
-          ))}
+          {
+            education.map((item, index) => (
+              <div
+                class="bg-dark-700 p-8 rounded-lg hover:bg-dark-700/70 transition-colors border-l-4 border-secondary"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <h4 class="text-2xl font-bold text-white mb-3">{item.title}</h4>
+                <p class="text-gray-400 text-lg mb-4">
+                  {item.institution} | {item.period}
+                </p>
+                <p class="text-gray-300 text-lg">{item.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>

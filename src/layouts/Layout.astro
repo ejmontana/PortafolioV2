@@ -1,15 +1,15 @@
 ---
-import '@fontsource/jetbrains-mono';
-import '@fontsource/inter';
+import "@fontsource/jetbrains-mono";
+import "@fontsource/inter";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { 
-  title, 
-  description = "Portafolio profesional mostrando mi trabajo y experiencia en desarrollo web"
+const {
+  title,
+  description = "Portafolio profesional mostrando mi trabajo y experiencia en desarrollo web",
 } = Astro.props;
 ---
 
@@ -32,9 +32,9 @@ const {
   <body class="bg-dark text-white font-sans">
     <slot />
     <script>
-      import AOS from 'aos';
-      import 'aos/dist/aos.css';
-      
+      import AOS from "aos";
+      import "aos/dist/aos.css";
+
       AOS.init({
         duration: 800,
         once: true,
@@ -55,7 +55,7 @@ const {
   }
 
   ::selection {
-    background-color: theme('colors.primary');
+    background-color: theme("colors.primary");
     color: white;
   }
 </style>
