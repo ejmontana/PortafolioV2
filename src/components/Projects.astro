@@ -1,433 +1,152 @@
 ---
-const vpsProjects = [
+const comingSoonProjects = [
   {
-    title: "Clúster de Alta Disponibilidad",
-    description:
-      "Implementación de un clúster de servidores con balanceo de carga y failover automático.",
-    timeline: "2023 - Presente",
-    role: "DevOps Engineer",
-    technologies: ["Nginx", "HAProxy", "Docker Swarm", "Prometheus"],
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-    infrastructure: {
-      servers: ["DigitalOcean", "AWS", "GCP"],
-      monitoring: ["Grafana", "Prometheus", "ELK Stack"],
-      security: ["Fail2Ban", "UFW", "Let's Encrypt", "CloudFlare"],
-    },
-    achievements: [
-      "99.99% de uptime",
-      "Reducción del 40% en costos de infraestructura",
-      "Tiempo de recuperación < 30 segundos",
-    ],
+    title: "Sistema de Gestión Empresarial",
+    description: "Plataforma integral para gestión de recursos empresariales con módulos de facturación, inventario y CRM.",
+    category: "Full Stack",
+    technologies: ["React", ".NET", "SQL Server", "SignalR"],
+    status: "En desarrollo",
+    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  {
-    title: "Plataforma de Automatización DevOps",
-    description:
-      "Sistema automatizado de despliegue y gestión de infraestructura.",
-    timeline: "2022 - 2023",
-    role: "DevOps Lead",
-    technologies: ["Ansible", "Terraform", "Jenkins", "Kubernetes"],
-    image:
-      "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
-    infrastructure: {
-      cloud: ["AWS", "GCP", "Azure"],
-      tools: ["Terraform", "Ansible", "Jenkins"],
-      monitoring: ["Datadog", "NewRelic"],
-    },
-    achievements: [
-      "Automatización del 90% de despliegues",
-      "Reducción del tiempo de despliegue en un 75%",
-      "Implementación de CI/CD completo",
-    ],
-  },
-];
-
-const backendProjects = [
   {
     title: "API Gateway Microservicios",
-    description:
-      "Gateway centralizado para gestión de microservicios con autenticación y rate limiting.",
-    timeline: "2023",
-    role: "Backend Architect",
+    description: "Gateway centralizado para gestión de microservicios con autenticación JWT y rate limiting.",
+    category: "Backend",
     technologies: ["Node.js", "Express", "Redis", "MongoDB"],
-    image:
-      "https://images.unsplash.com/photo-1623282033815-40b05d96c903?w=800&q=80",
-    features: [
-      "Autenticación JWT",
-      "Rate Limiting",
-      "Circuit Breaker",
-      "Logging Distribuido",
-    ],
-    metrics: [
-      "Procesamiento de 5k+ req/seg",
-      "Latencia < 50ms",
-      "99.9% disponibilidad",
-    ],
+    status: "Planificado",
+    image: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  {
-    title: "Sistema de Procesamiento en Tiempo Real",
-    description:
-      "Pipeline de procesamiento de datos en tiempo real con websockets.",
-    timeline: "2022",
-    role: "Backend Developer",
-    technologies: ["Python", "FastAPI", "WebSocket", "RabbitMQ"],
-    image:
-      "https://images.unsplash.com/photo-1617042375876-a13e36732a04?w=800&q=80",
-    features: [
-      "Procesamiento Stream",
-      "WebSocket Bidireccional",
-      "Cola de Mensajes",
-      "Escalado Horizontal",
-    ],
-    metrics: [
-      "10k+ conexiones simultáneas",
-      "Procesamiento en < 100ms",
-      "Escalado automático",
-    ],
-  },
-];
-
-const frontendProjects = [
   {
     title: "Dashboard Analytics",
-    description:
-      "Panel de control interactivo con visualizaciones de datos en tiempo real.",
-    timeline: "2023",
-    role: "Frontend Lead",
+    description: "Panel de control interactivo con visualizaciones de datos en tiempo real y métricas empresariales.",
+    category: "Frontend",
     technologies: ["React", "D3.js", "TailwindCSS", "WebSocket"],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    features: [
-      "Gráficos Interactivos",
-      "Datos en Tiempo Real",
-      "Temas Personalizables",
-      "Modo Offline",
-    ],
-    metrics: [
-      "Tiempo de carga < 2s",
-      "90+ puntuación Lighthouse",
-      "60% menos de uso de datos",
-    ],
+    status: "En diseño",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
-    title: "Plataforma E-learning",
-    description:
-      "Sistema de aprendizaje en línea con contenido interactivo y seguimiento de progreso.",
-    timeline: "2022",
-    role: "Frontend Developer",
-    technologies: ["Vue.js", "Nuxt", "GraphQL", "TailwindCSS"],
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
-    features: [
-      "Contenido Interactivo",
-      "Progreso Offline",
-      "Video Streaming",
-      "Gamificación",
-    ],
-    metrics: [
-      "Retención de usuarios +45%",
-      "Engagement +60%",
-      "Satisfacción 4.8/5",
-    ],
-  },
+    title: "Infraestructura Cloud",
+    description: "Implementación de arquitectura cloud con alta disponibilidad y escalado automático.",
+    category: "DevOps",
+    technologies: ["AWS", "Docker", "Kubernetes", "Terraform"],
+    status: "En investigación",
+    image: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800"
+  }
 ];
 
-const databaseProjects = [
-  {
-    title: "Sistema de Replicación Multi-región",
-    description:
-      "Implementación de base de datos distribuida con replicación multi-región.",
-    timeline: "2023",
-    role: "Database Engineer",
-    technologies: ["PostgreSQL", "MongoDB", "Redis", "Consul"],
-    image:
-      "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80",
-    features: {
-      replication: ["Multi-región", "Async/Sync", "Conflict Resolution"],
-      monitoring: ["PgHero", "Prometheus", "Grafana"],
-      backup: ["Continuous Backup", "Point-in-time Recovery"],
-    },
-    metrics: ["RPO < 1 segundo", "RTO < 30 segundos", "99.999% disponibilidad"],
-  },
-  {
-    title: "Data Warehouse Analytics",
-    description:
-      "Plataforma de análisis de datos con procesamiento distribuido.",
-    timeline: "2022",
-    role: "Data Engineer",
-    technologies: ["ClickHouse", "Apache Kafka", "Airflow", "dbt"],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    features: {
-      processing: ["Streaming", "Batch", "Real-time Analytics"],
-      storage: ["Columnar Storage", "Compression", "Partitioning"],
-      analytics: ["OLAP", "Custom Metrics", "Dashboards"],
-    },
-    metrics: ["PB de datos procesados", "Queries < 100ms", "Compresión 10:1"],
-  },
-];
+const categoryColors = {
+  "Full Stack": "text-blue-400 border-blue-400",
+  "Backend": "text-green-400 border-green-400",
+  "Frontend": "text-purple-400 border-purple-400",
+  "DevOps": "text-orange-400 border-orange-400"
+};
+
+const statusColors = {
+  "En desarrollo": "bg-green-500/20 text-green-400",
+  "Planificado": "bg-blue-500/20 text-blue-400",
+  "En diseño": "bg-purple-500/20 text-purple-400",
+  "En investigación": "bg-orange-500/20 text-orange-400"
+};
 ---
 
-<section id="projects" class="py-32">
-  <div class="container mx-auto px-6 max-w-7xl">
-    <h2 class="text-4xl font-bold mb-16 text-center" data-aos="fade-up">
-      Portafolio de Proyectos <div class="text-red-500">(En Desarrollo)</div>
-    </h2>
-
-    <!-- Backend -->
-    <!-- <div class="mb-20">
-      <h3 class="text-3xl font-bold mb-8 text-blue-500" data-aos="fade-up">
-        Backend & APIs
-      </h3>
-      <div class="grid lg:grid-cols-2 gap-8">
-        {
-          backendProjects.map((project, index) => (
-            <div
-              class="bg-dark-800 rounded-lg overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div class="relative">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  class="w-full h-64 object-cover"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div class="p-8">
-                <div class="flex justify-between items-start mb-4">
-                  <h4 class="text-2xl font-bold">{project.title}</h4>
-                  <span class="text-sm text-gray-400">{project.timeline}</span>
-                </div>
-                <p class="text-gray-300 text-lg mb-4">{project.description}</p>
-                <p class="text-blue-500 font-bold mb-2">Rol: {project.role}</p>
-
-                <div class="mb-6">
-                  <h5 class="text-lg font-bold mb-2">Características:</h5>
-                  <ul class="list-disc list-inside text-gray-300 space-y-1">
-                    {project.features.map((feature) => (
-                      <li>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div class="mb-6">
-                  <h5 class="text-lg font-bold mb-2">Métricas:</h5>
-                  <ul class="list-disc list-inside text-gray-300 space-y-1">
-                    {project.metrics.map((metric) => (
-                      <li>{metric}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                  {project.technologies.map((tech) => (
-                    <span class="bg-dark-700 px-4 py-2 rounded-full text-sm text-blue-400">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))
-        }
+<section id="projects" class="py-16 sm:py-24 lg:py-32">
+  <div class="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">
+        Portafolio de Proyectos
+      </h2>
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 rounded-full">
+        <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="text-amber-500 font-medium text-sm sm:text-base">Proyectos en desarrollo</span>
       </div>
-    </div> -->
+      <p class="text-gray-400 mt-4 text-sm sm:text-base max-w-2xl mx-auto">
+        Estos son algunos de los proyectos en los que estoy trabajando actualmente. 
+        Pronto estarán disponibles con documentación completa y demos en vivo.
+      </p>
+    </div>
 
-    <!-- Frontend -->
-    <!-- <div class="mb-20">
-      <h3 class="text-3xl font-bold mb-8 text-purple-500" data-aos="fade-up">
-        Frontend & UI/UX
-      </h3>
-      <div class="grid lg:grid-cols-2 gap-8">
-        {
-          frontendProjects.map((project, index) => (
-            <div
-              class="bg-dark-800 rounded-lg overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div class="relative">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  class="w-full h-64 object-cover"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div class="p-8">
-                <div class="flex justify-between items-start mb-4">
-                  <h4 class="text-2xl font-bold">{project.title}</h4>
-                  <span class="text-sm text-gray-400">{project.timeline}</span>
-                </div>
-                <p class="text-gray-300 text-lg mb-4">{project.description}</p>
-                <p class="text-purple-500 font-bold mb-2">
-                  Rol: {project.role}
-                </p>
-
-                <div class="mb-6">
-                  <h5 class="text-lg font-bold mb-2">Características:</h5>
-                  <ul class="list-disc list-inside text-gray-300 space-y-1">
-                    {project.features.map((feature) => (
-                      <li>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div class="mb-6">
-                  <h5 class="text-lg font-bold mb-2">Métricas:</h5>
-                  <ul class="list-disc list-inside text-gray-300 space-y-1">
-                    {project.metrics.map((metric) => (
-                      <li>{metric}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                  {project.technologies.map((tech) => (
-                    <span class="bg-dark-700 px-4 py-2 rounded-full text-sm text-purple-400">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      {comingSoonProjects.map((project, index) => (
+        <div
+          class="bg-dark-800 rounded-lg overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300 border border-dark-700"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div class="relative">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-48 sm:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-800/80 to-transparent"></div>
+            <div class="absolute top-3 sm:top-4 right-3 sm:right-4">
+              <span class={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${statusColors[project.status]}`}>
+                {project.status}
+              </span>
             </div>
-          ))
-        }
-      </div>
-    </div> -->
-
-    <!-- Bases de Datos -->
-    <!-- <div class="mb-20">
-      <h3 class="text-3xl font-bold mb-8 text-amber-500" data-aos="fade-up">
-        Bases de Datos & Data Engineering
-      </h3>
-      <div class="grid lg:grid-cols-2 gap-8">
-        {
-          databaseProjects.map((project, index) => (
-            <div
-              class="bg-dark-800 rounded-lg overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div class="relative">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  class="w-full h-64 object-cover"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-amber-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div class="p-8">
-                <div class="flex justify-between items-start mb-4">
-                  <h4 class="text-2xl font-bold">{project.title}</h4>
-                  <span class="text-sm text-gray-400">{project.timeline}</span>
-                </div>
-                <p class="text-gray-300 text-lg mb-4">{project.description}</p>
-                <p class="text-amber-500 font-bold mb-2">Rol: {project.role}</p>
-
-                <div class="mb-6">
-                  <h5 class="text-lg font-bold mb-2">Características:</h5>
-                  {Object.entries(project.features).map(([key, value]) => (
-                    <div class="mb-3">
-                      <p class="font-semibold text-gray-200 capitalize mb-1">
-                        {key}:
-                      </p>
-                      <ul class="list-disc list-inside text-gray-300 space-y-1">
-                        {Array.isArray(value) &&
-                          value.map((item) => <li>{item}</li>)}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-
-                <div class="mb-6">
-                  <h5 class="text-lg font-bold mb-2">Métricas:</h5>
-                  <ul class="list-disc list-inside text-gray-300 space-y-1">
-                    {project.metrics.map((metric) => (
-                      <li>{metric}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                  {project.technologies.map((tech) => (
-                    <span class="bg-dark-700 px-4 py-2 rounded-full text-sm text-amber-400">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div class="absolute top-3 sm:top-4 left-3 sm:left-4">
+              <span class={`px-2 sm:px-3 py-1 rounded-full border text-xs sm:text-sm font-medium ${categoryColors[project.category]}`}>
+                {project.category}
+              </span>
             </div>
-          ))
-        }
-      </div>
-    </div> -->
-
-    <!-- VPS & DevOps -->
-    <!-- <div class="mb-20">
-        <h3 class="text-3xl font-bold mb-8 text-emerald-500" data-aos="fade-up">
-          Infraestructura & DevOps
-        </h3>
-        <div class="grid lg:grid-cols-2 gap-8">
-          {vpsProjects.map((project, index) => (
-            <div 
-              class="bg-dark-800 rounded-lg overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div class="relative">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  class="w-full h-64 object-cover"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <div class="p-8">
-                <div class="flex justify-between items-start mb-4">
-                  <h4 class="text-2xl font-bold">{project.title}</h4>
-                  <span class="text-sm text-gray-400">{project.timeline}</span>
-                </div>
-                <p class="text-gray-300 text-lg mb-4">{project.description}</p>
-                <p class="text-emerald-500 font-bold mb-2">Rol: {project.role}</p>
-  
-                {project.infrastructure && (
-                  <div class="mb-6">
-                    <h5 class="text-lg font-bold mb-2">Infraestructura:</h5>
-                    {Object.entries(project.infrastructure).map(([key, value]) => (
-                      <p class="text-gray-300 mb-2">
-                        <span class="font-semibold capitalize">{key}:</span> {Array.isArray(value) ? value.join(', ') : value}
-                      </p>
-                    ))}
-                  </div>
-                )}
-  
-                <div class="mb-6">
-                  <h5 class="text-lg font-bold mb-2">Logros:</h5>
-                  <ul class="list-disc list-inside text-gray-300 space-y-1">
-                    {project.achievements.map(achievement => (
-                      <li>{achievement}</li>
-                    ))}
-                  </ul>
-                </div>
-  
-                <div class="flex flex-wrap gap-3">
-                  {project.technologies.map(tech => (
-                    <span class="bg-dark-700 px-4 py-2 rounded-full text-sm text-emerald-400">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+          </div>
+          
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
+              {project.title}
+            </h3>
+            <p class="text-gray-300 text-sm sm:text-base mb-4 leading-relaxed">
+              {project.description}
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              {project.technologies.map((tech) => (
+                <span class="bg-dark-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm text-gray-300">
+                  {tech}
+                </span>
+              ))}
             </div>
-          ))}
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-gray-400">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-xs sm:text-sm">Próximamente</span>
+              </div>
+              <button 
+                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium cursor-not-allowed opacity-50"
+                disabled
+              >
+                Ver más →
+              </button>
+            </div>
+          </div>
         </div>
-      </div> -->
+      ))}
+    </div>
+
+    <!-- Call to action -->
+    <div class="text-center mt-12 sm:mt-16" data-aos="fade-up">
+      <div class="bg-dark-800 p-6 sm:p-8 rounded-lg border border-dark-700">
+        <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">¿Interesado en colaborar?</h3>
+        <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
+          Si tienes un proyecto en mente o quieres saber más sobre mi trabajo, 
+          no dudes en contactarme.
+        </p>
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 rounded-lg transition-colors font-medium text-sm sm:text-base"
+        >
+          Hablemos
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
 </section>

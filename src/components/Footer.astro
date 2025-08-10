@@ -2,38 +2,61 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="py-12 bg-dark-800">
-  <div class="container mx-auto px-6 max-w-7xl">
+<footer class="py-8 sm:py-12 bg-dark-800 border-t border-dark-700">
+  <div class="container mx-auto px-4 sm:px-6 max-w-7xl">
     <div class="flex flex-col items-center justify-center space-y-4">
-      <p class="flex items-center text-gray-400">
-        Hecho con
-        <span class="inline-block mx-2">
-          <svg
-            class="w-5 h-5 text-red-500 animate-pulse"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </span>
-        usando Astro por Enderson Montaña
-      </p>
+      <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center">
+        <p class="flex items-center text-gray-400 text-sm sm:text-base">
+          Hecho con
+          <span class="inline-block mx-2">
+            <svg
+              class="w-4 h-4 sm:w-5 sm:h-5 text-red-500 animate-pulse"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </span>
+          usando Astro
+        </p>
+        <span class="hidden sm:inline text-gray-600">•</span>
+        <p class="text-gray-400 text-sm sm:text-base">
+          © {currentYear} Enderson Montaña
+        </p>
+      </div>
+      
+      <!-- Enlaces adicionales -->
+      <div class="flex gap-4 sm:gap-6">
+        <a
+          href="#about"
+          class="text-gray-500 hover:text-gray-300 transition-colors text-sm"
+        >
+          Sobre Mí
+        </a>
+        <a
+          href="#projects"
+          class="text-gray-500 hover:text-gray-300 transition-colors text-sm"
+        >
+          Proyectos
+        </a>
+        <a
+          href="#contact"
+          class="text-gray-500 hover:text-gray-300 transition-colors text-sm"
+        >
+          Contacto
+        </a>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
   @keyframes pulse {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
   }
 
   .animate-pulse {

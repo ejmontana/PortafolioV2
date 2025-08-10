@@ -25,12 +25,11 @@ const experience = [
     position: "Desarrollador de Software",
     company: "Equipo Gerencial Con Solidez GCS. C.A",
     period: "Ago. 2022 - Actualidad",
-    description: "",
     achievements: [
       "Co-desarrollo del sistema core empresarial utilizando React.js (frontend) y .NET (backend), base tecnológica de las operaciones de la compañía.",
       "Implementación de servicio de notificaciones en tiempo real con Socket.io y Express.js, integrado con SQL Server para gestión de datos.",
-      "Desarrollo de Backend para aplicación móvil de gestión de pagos con Express.js, utilizando Supabase y SQL Server como bases de datos.",
-      "Creación de API de geolocalización en tiempo real combinando Supabase y servicios de geolocalización de Google Maps.",
+      "Desarrollo de Backend para aplicación móvil de gestión de pagos con Express.js, utilizando bases de datos relacionales y no relacionales.",
+      "Creación de API de geolocalización en tiempo real combinando servicios de geolocalización de Google Maps.",
       "Arquitectura de Backend para sistema de facturación e inventarios, solución integral para gestión comercial.",
       "Desarrollo de sistema Helpdesk interno integrado a los sistemas corporativos, construido con React.js para optimizar soporte técnico.",
       "Automatización de procesos mediante IA: Implementación de sistema que procesa imágenes para verificación automatizada de pagos.",
@@ -41,7 +40,6 @@ const experience = [
     position: "Desarrollador Semi Senior",
     company: "KPMG",
     period: "Mar. 2021 - Jun. 2022",
-    description: "",
     achievements: [
       "Desarrollo de sistema generador de tarjetas de contacto con QR utilizando .NET 6 y Blazor, agilizando el intercambio de información digital.",
       "Implementación y configuración del sistema Servidek, incluyendo automatización de envíos de correos electrónicos para mejorar la comunicación institucional.",
@@ -54,8 +52,6 @@ const experience = [
     position: "Analista de Sistemas",
     company: "PlanSuarez C.A",
     period: "Feb. 2018 - Mar. 2021",
-    description: "",
-
     achievements: [
       "Desarrollo de sistema de reportes con JavaScript Vanilla y conexión a SQL Server para visualización y análisis de datos.",
       "Automatización de procesos comerciales: Creación de paquetes DTS para actualización masiva de precios en el sistema POS.",
@@ -70,65 +66,60 @@ const experience = [
 ];
 ---
 
-<section id="career" class="py-32 bg-dark-800">
-  <div class="container mx-auto px-6 max-w-7xl">
-    <h2 class="text-4xl font-bold mb-16 text-center" data-aos="fade-up">
+<section id="career" class="py-16 sm:py-24 lg:py-32 bg-dark-800">
+  <div class="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 sm:mb-16 text-center" data-aos="fade-up">
       Trayectoria Profesional
     </h2>
 
-    <div class="grid lg:grid-cols-2 gap-16">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16">
       <!-- Experiencia -->
       <div>
-        <h3 class="text-3xl font-bold mb-8 text-primary" data-aos="fade-up">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-primary" data-aos="fade-up">
           Experiencia
         </h3>
-        <div class="space-y-8">
-          {
-            experience.map((job, index) => (
-              <div
-                class="bg-dark-700 p-8 rounded-lg hover:bg-dark-700/70 transition-colors border-l-4 border-primary"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <h4 class="text-2xl font-bold text-white mb-3">
-                  {job.position}
-                </h4>
-                <p class="text-gray-400 text-lg mb-4">
-                  {job.company} | {job.period}
-                </p>
-                <p class="text-gray-300 text-lg mb-6">{job.description}</p>
-                <ul class="list-disc list-inside text-gray-300 space-y-3">
-                  {job.achievements.map((achievement) => (
-                    <li class="text-lg">{achievement}</li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          }
+        <div class="space-y-6 sm:space-y-8">
+          {experience.map((job, index) => (
+            <div
+              class="bg-dark-700 p-4 sm:p-6 lg:p-8 rounded-lg hover:bg-dark-700/70 transition-colors border-l-4 border-primary"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <h4 class="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+                {job.position}
+              </h4>
+              <p class="text-gray-400 text-sm sm:text-base lg:text-lg mb-3 sm:mb-4">
+                {job.company} | {job.period}
+              </p>
+              <ul class="list-disc list-inside text-gray-300 space-y-2 sm:space-y-3">
+                {job.achievements.map((achievement) => (
+                  <li class="text-sm sm:text-base lg:text-lg leading-relaxed">{achievement}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
 
       <!-- Educación -->
       <div>
-        <h3 class="text-3xl font-bold mb-8 text-primary" data-aos="fade-up">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-primary" data-aos="fade-up">
           Educación
         </h3>
-        <div class="space-y-8">
-          {
-            education.map((item, index) => (
-              <div
-                class="bg-dark-700 p-8 rounded-lg hover:bg-dark-700/70 transition-colors border-l-4 border-secondary"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <h4 class="text-2xl font-bold text-white mb-3">{item.title}</h4>
-                <p class="text-gray-400 text-lg mb-4">
-                  {item.institution} | {item.period}
-                </p>
-                <p class="text-gray-300 text-lg">{item.description}</p>
-              </div>
-            ))
-          }
+        <div class="space-y-6 sm:space-y-8">
+          {education.map((item, index) => (
+            <div
+              class="bg-dark-700 p-4 sm:p-6 lg:p-8 rounded-lg hover:bg-dark-700/70 transition-colors border-l-4 border-secondary"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <h4 class="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">{item.title}</h4>
+              <p class="text-gray-400 text-sm sm:text-base lg:text-lg mb-3 sm:mb-4">
+                {item.institution} | {item.period}
+              </p>
+              <p class="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
